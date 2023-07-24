@@ -1,0 +1,15 @@
+
+
+.footer{
+    overflow: hidden;
+    background-color: rgba(48, 48, 48, 0.271);
+    padding: 20px 10px;
+}
+
+h1{
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+
