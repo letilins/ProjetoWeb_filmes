@@ -1,0 +1,14 @@
+.banner{
+    background-image: url('../../../assets/img/hello_world.jpg');
+    height: 570px;
+    background-position: center top;
+    background-size: cover;
+}
+
+.banner h1{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
