@@ -1,25 +1,22 @@
 <h1> Formulario para cadastro do Filme</h1>
 
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="cadastrarFilme()">
     <label for="nome">Nome do Filme:</label>
-    <input type="text" id="nome" [(ngModel)]="filme.nome" name="nome" required>
+    <input type="text" id="nome" [(ngModel)]="novoFilme.nome" name="nome" required>
   <br>
     <label for="ano">Ano:</label>
-    <input type="number" id="ano" [(ngModel)]="filme.ano" name="ano" required>
+    <input type="number" id="ano" [(ngModel)]="novoFilme.ano" name="ano" required>
   <br>
     <label for="genero">Gênero:</label>
-    <input type="text" id="genero" [(ngModel)]="filme.genero" name="ano" required>
+    <input type="text" id="genero" [(ngModel)]="novoFilme.genero" name="ano" required>
   <br>
     <label for="diretor">Diretor:</label>
-    <input type="text" id="diretor" [(ngModel)]="filme.diretor" name="diretor" required>
+    <input type="text" id="diretor" [(ngModel)]="novoFilme.diretor" name="diretor" required>
   <br>
-    <label for="atores">Atores (separados por vírgula):</label>
-    <input type="text" id="atores" [(ngModel)]="atoresInput" name="atores">
-    <button type="button" (click)="adicionarAtor()">Adicionar Ator</button>
-    <ul>
-      <li *ngFor="let ator of filme.atores">{{ ator }}</li>
-    </ul>
-  
+    <label for="atores">Atores:</label>
+    <input type="text" id="atores"  [(ngModel)]="novoFilme.atores" name="atores" required>
+  <br>
+  <br>
     <button type="submit">Cadastrar Filme</button>
   </form>
   

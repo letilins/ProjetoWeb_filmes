@@ -13,7 +13,9 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
   {path:'lists',component:ListsComponent},
-  {path: 'movieform', component:MovieformComponent}
+  {path: 'movieform', component:MovieformComponent},
+  { path: '', redirectTo: '/cadastro-filme', pathMatch: 'full' }
+  
 ];
 
 @NgModule({

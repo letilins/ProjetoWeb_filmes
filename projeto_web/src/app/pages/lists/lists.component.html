@@ -1,1 +1,14 @@
-<p>lists works!</p>
+
+<div>
+    <h2>Lista de Filmes</h2>
+    <ul>
+      <li *ngFor="let filme of filmes">
+        <strong>Nome do Filme:</strong> {{ filme.nome }}<br />
+        <strong>Diretor:</strong> {{ filme.diretor }}<br />
+        <strong>Ano:</strong> {{ filme.ano }}<br />
+        <strong>Gênero:</strong> {{ filme.genero }}<br />
+        <strong>Atores:</strong> {{ filme.atores.join(',') }}<br /><br />
+      </li>
+    </ul>
+  </div>
+  
