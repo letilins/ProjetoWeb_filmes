@@ -1,2 +1,9 @@
 
+*{
+    margin: 2px;
+    padding: 0px;
+}
 
+.navbar{
+    background-color: rgba(86, 85, 85, 0.173);
+}
