@@ -1,12 +1,12 @@
 .banner{
-    background-image: url('../../../assets/img/hello_world.jpg');
-    height: 605px;
+    background-image: url('../../../assets/img/cinema_bemvindo.jpg');
+    height: 590px;
     background-position: center top;
     background-size: cover;
 }
 
 .banner h1{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 50px;
     font-weight: bold;
     text-align: center;
