@@ -1,17 +1,26 @@
 
 <div>
     <h2>Lista de Filmes</h2>
+    
     <ul>
       <li *ngFor="let filme of filmes">
-        <strong>Nome do Filme:</strong> {{ filme.nome }}<br />
-        <strong>Diretor:</strong> {{ filme.diretor }}<br />
-        <strong>Ano:</strong> {{ filme.ano }}<br />
-        <strong>Gênero:</strong> {{ filme.genero }}<br />
-        <strong>Atores:</strong> {{ filme.atores}}<br /><br />
+        <div class="formulario">
+          
+          <strong>Nome do Filme:</strong> {{ filme.nome }}<br />
+          <strong>Diretor:</strong> {{ filme.diretor }}<br />
+          <strong>Ano:</strong> {{ filme.ano }}<br />
+          <strong>Gênero:</strong> {{ filme.genero }}<br />
+          <strong>Atores:</strong> {{ filme.atores}}<br /><br />
+        
+        </div>
 
-        <h3>Poster do filme</h3>
-        <img class="filme_poster" src="{{ filme.imagem }}" alt="{{ filme.nome }} Imagem" width="100" height="150">
-        <a href="{{ filme.video }}" target="_blank" class="link-filme">Assistir o filme</a>
+        <div class="imagem_video">
+          
+          <h3>Poster do filme</h3>
+          <img class="filme_poster" src="{{ filme.imagem }}" alt="{{ filme.nome }} Imagem" width="100" height="150">
+          <a href="{{ filme.video }}" target="_blank" class="link-filme">Assistir o filme</a>
+        
+        </div>
       </li>
 
 

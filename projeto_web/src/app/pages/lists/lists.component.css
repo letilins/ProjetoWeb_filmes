@@ -31,7 +31,8 @@
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc;
-   
+    display: flex;
+    align-items: center;
   }
 
   .filme_poster{
@@ -46,8 +47,26 @@
     max-width: 100%;
     max-height: 100%;
   }
+
+  .formulario {
+    width: 50%;
+    display: inline-table;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .imagem_video{
+    width: 50%;
+    display: inline-table;
+    margin: 0;
+    padding: 0px;
+    height: auto;
+    min-height: 400px;
+  }
   
-  h3{
+  .imagem_video h3 {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
@@ -56,6 +75,8 @@
   .link-filme{
     font-size: 15px;
     text-align: center;
+    
+    
   }
   
   
