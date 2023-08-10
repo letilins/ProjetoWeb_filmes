@@ -8,7 +8,12 @@ import { Filme } from '../../models/filme.model';
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit {
-  filmes: Filme[] = [];
+  filmes: Filme[] = [
+    //magem: 'caminho/para/imagem2.jpg',
+    //video: 'https://www.youtube.com/- incluir o link do youtube do filme
+
+
+  ];
 
   constructor(private MovieService: MovieService) {}
 

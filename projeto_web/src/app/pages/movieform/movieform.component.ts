@@ -14,6 +14,8 @@ export class MovieformComponent {
     ano: 0,
     genero: '',
     atores: [],
+    imagem: '',
+    video: '',
   }
 
   constructor(private MovieService: MovieService) {}
@@ -26,6 +28,8 @@ export class MovieformComponent {
       ano: 0,
       genero: '',
       atores: [],
+      imagem: '',
+      video: '',
     };
   }
 }
