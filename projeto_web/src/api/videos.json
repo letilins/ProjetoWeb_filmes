@@ -2,15 +2,13 @@
     {
         "id": "1",
         "titulo": "Barbie",
-        "descricao": "descricao",
-        "url": "http://urldovideo.com.br",
+        "video": "app/pages/pages_video/barbie.html",
         "imagem": "assets/img/barbie.jpg"
     },
     {
         "id": "2",
         "titulo": "Video 2",
-        "descricao": "descricao 2",
-        "url": "http://urldovideo.com.br",
+        "video": "app/pages/pages_video/xxx",
         "imagem": "assets/img/nomedaimagem2.jpg"
     }
 ]
