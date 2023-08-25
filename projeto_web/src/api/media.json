@@ -7,8 +7,8 @@
     },
     {
         "id": "2",
-        "titulo": "Video 2",
-        "video": "app/pages/pages_video/xxx",
+        "titulo": "Missão: Impossível – Acerto De Contas Parte 1",
+        "video": "app/pages/pages_video/missao_impossivel.html",
         "imagem": "assets/img/nomedaimagem2.jpg"
     }
 ]

@@ -11,14 +11,17 @@ export class ListsComponent implements OnInit {
   filmes: Filme[] = [
     //magem: 'caminho/para/imagem2.jpg',
     //video: 'https://www.youtube.com/- incluir o link do youtube do filme
-
-
   ];
+
+  dados: any;
 
   constructor(private MovieService: MovieService) {}
 
   ngOnInit() {
     this.filmes = this.MovieService.obterFilmes();
-  }
 
+    this.MovieService.getData().subscribe(data => {
+      this.dados = data;
+    });
+  }
 }

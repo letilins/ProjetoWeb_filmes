@@ -1,0 +1,16 @@
+
+
+.video{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mantém a proporção 16:9 (altura/largura) */
+  }
+  
+  .video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
