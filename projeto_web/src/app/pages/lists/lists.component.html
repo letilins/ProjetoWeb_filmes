@@ -17,8 +17,11 @@
         <div class="imagem_video">
           
           <h3>Poster do filme</h3>
-          <img class="filme_poster" src="{{ filme.imagem }}" alt="{{ filme.nome }} Imagem" width="100" height="150">
-          <a href="{{ filme.video }}" target="_blank" class="link-filme">Assistir o filme</a>
+          <img class="filme_poster" src="{{ filme.imagem }}" alt="{{ filme.nome }} Imagem" width="100" height="150">
+          <a href="{{ filme.video }}" target="_blank" class="link-filme">Assistir o filme</a>
+            <br>
+            <br>
+          <iframe width="250" height="115" src="{{ filme.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         
         </div>
       </li>
