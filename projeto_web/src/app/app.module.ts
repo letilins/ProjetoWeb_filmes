@@ -14,7 +14,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MovieformComponent } from './pages/movieform/movieform.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,16 +24,16 @@ import { MovieformComponent } from './pages/movieform/movieform.component';
     AboutComponent,
     ContactComponent,
     ListsComponent,
-    MovieformComponent
+    MovieformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

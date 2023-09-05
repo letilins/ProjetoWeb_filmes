@@ -5,13 +5,15 @@ import { Filme } from '../../models/filme.model';
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  styleUrls: ['./lists.component.css'],
 })
 export class ListsComponent implements OnInit {
   filmes: Filme[] = [
-    //magem: 'caminho/para/imagem2.jpg',
+    //imagem: '../../src/assets/img/xxx.jpg',
     //video: 'https://www.youtube.com/- incluir o link do youtube do filme
   ];
+
+  videoId = 'ID_VIDEO';
 
   dados: any;
 
@@ -20,7 +22,7 @@ export class ListsComponent implements OnInit {
   ngOnInit() {
     this.filmes = this.MovieService.obterFilmes();
 
-    this.MovieService.getData().subscribe(data => {
+    this.MovieService.getData().subscribe((data) => {
       this.dados = data;
     });
   }
