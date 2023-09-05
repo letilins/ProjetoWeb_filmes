@@ -23,12 +23,22 @@ form {
   }
   
   input[type="text"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="url"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
+  }
+
+  input[type="file"] {
+    background-color:#b0afaf7a;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    
   }
   
   button[type="submit"] {

@@ -75,9 +75,20 @@
   .link-filme{
     font-size: 15px;
     text-align: center;
-    
-    
   }
+  
+  iframe{
+    border: 2px solid red;
+  }
+
+  img{
+    border: 2px solid red;
+  }
+  
+  h3{
+    text-align: center;
+  }
+
   
   
   
