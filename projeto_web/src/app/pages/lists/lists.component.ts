@@ -3,6 +3,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MovieService } from 'src/app/service/movie.service';
 import { Filme } from '../../models/filme.model';
 
+
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',

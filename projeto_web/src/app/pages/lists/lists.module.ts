@@ -6,6 +6,6 @@ import { ListsComponent } from './lists.component';
 @NgModule({
   declarations: [ListsComponent],
   exports: [ListsComponent],
-  imports: [SafePipe],
+  imports: [SafePipe]
 })
 export class ListsModule {}
