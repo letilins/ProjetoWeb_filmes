@@ -1,5 +1,9 @@
 <h1> Formulario para cadastro do Filme</h1>
 
+<div class="alert" *ngIf="showAlert">
+  Formulário enviado com sucesso!
+</div>
+
 <form (ngSubmit)="cadastrarFilme()">
     <label for="nome">Nome do Filme: </label>
     <input type="text" id="nome" [(ngModel)]="novoFilme.nome" name="nome" required>
@@ -26,4 +30,5 @@
   <br>
     <button type="submit">Cadastrar Filme</button>
   </form>
+
   

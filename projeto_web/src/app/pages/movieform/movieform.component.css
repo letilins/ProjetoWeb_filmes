@@ -69,4 +69,16 @@ form {
     content: "\2022"; 
     margin-right: 5px;
   }
+
+  alert {
+    background-color: #4c65af;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
       

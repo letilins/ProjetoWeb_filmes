@@ -17,6 +17,7 @@ export class MovieformComponent {
     imagem: '',
     video: '',
   }
+  showAlert: boolean = false; 
 
   constructor(private MovieService: MovieService) {}
 
@@ -31,5 +32,12 @@ export class MovieformComponent {
       imagem: '',
       video: '',
     };
+    this.showAlert = true;
+
+    setTimeout(() => {
+      this.showAlert = false;
+    }, 3000);
   }
+
+  
 }

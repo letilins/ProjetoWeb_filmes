@@ -32,7 +32,7 @@ import { MovieformComponent } from './pages/movieform/movieform.component';
     FormsModule,
     BrowserModule,
     HttpClientModule,
-  
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
