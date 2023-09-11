@@ -10,10 +10,8 @@ import { Filme } from '../../models/filme.model';
   styleUrls: ['./lists.component.css'],
 })
 export class ListsComponent implements OnInit {
-  filmes: Filme[] = [
-    //imagem: '../../src/assets/img/xxx.jpg',
-    //video: 'https://www.youtube.com/- incluir o link do youtube do filme
-  ];
+  filmes: Filme[] = [];
+
   urlVideo: SafeUrl | any;
   videoId = 'ID_VIDEO';
 
@@ -25,6 +23,7 @@ export class ListsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.urlVideo =
       'https://www.youtube.com/embed/YKfeEKJBbU0?si=n_nc4RjTZEwhRJG1';
     this.urlVideo = this.sanitizer.bypassSecurityTrustResourceUrl(

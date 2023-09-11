@@ -6,6 +6,6 @@ export class Filme {
   genero!: string;
   diretor!: string;
   atores!: string[];
-  imagem!: string;
+  imagem!: any;
   video!: any;
 }
