@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class MovieformComponent {
   novoFilme: Filme = {
+    id:'',
     nome: '',
     diretor: '',
     ano: 0,
@@ -25,6 +26,7 @@ export class MovieformComponent {
   cadastrarFilme() {
     this.MovieService.adicionarFilme(this.novoFilme);
     this.novoFilme = {
+      id:'',
       nome: '',
       diretor: '',
       ano: 0,

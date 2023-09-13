@@ -32,8 +32,16 @@ export class MovieService {
 
 
 
-  deletarFilme(filmes: Filme) {
-    const filme = localStorage.removeItem(this.filmesKey);
+  deletarFilme(filme: Filme) {
+    const filmes = JSON.parse(localStorage.getItem(this.filmesKey) || '[]');
     //localStorage.clear(); limpa toda a lista :(
+      const index = filmes.findIndex((f: { id: any; }) => f.id === filmes.id);
+
+      if (index !== -1) {
+
+        filmes.splice(index, 1);
+
+        localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
+      }
   }
 }

@@ -14,7 +14,7 @@ export class ListsComponent implements OnInit {
 
   urlVideo: SafeUrl | any;
  
-
+  id: any;
   dados: any;
   Filme: any;
 
@@ -47,12 +47,12 @@ export class ListsComponent implements OnInit {
       nome: nome
     };
 
-    this.Filme.push(this.AdicionarIDfilmes);
+    this.Filme.push(NovoIDfilme);
   }
 
 
   ExcluirFilme(filmekey: String){
-    this.Filme = this.Filme.filter((Filme: { id: String; }) => Filme.id !== filmekey);
+    this.Filme = this.Filme.filter((filme: { id: string; }) => filme.id !== filmekey);
   }
 
 

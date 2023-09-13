@@ -81,6 +81,14 @@
     border: 2px solid red;
   }
 
+  button{
+    background-color: #83768e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
 
   
