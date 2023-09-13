@@ -11,6 +11,10 @@
           <strong>Ano:</strong> {{ filme.ano }}<br />
           <strong>Gênero:</strong> {{ filme.genero }}<br />
           <strong>Atores:</strong> {{ filme.atores}}<br /><br />
+
+          <br><br>
+          <p>{{ filme.nome }} (ID: {{ filme.id }})</p>
+          <button (click)="ExcluirFilme(filme.id)"> Excluir </button>
         
         </div>
 

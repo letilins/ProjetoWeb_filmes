@@ -1,7 +1,8 @@
+import { Filme } from './../models/filme.model';
 import { Injectable } from '@angular/core';
-import { Filme } from '../../app/models/filme.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +29,8 @@ export class MovieService {
   getData(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+
 
   deletarFilme(filmes: Filme) {
     const filme = localStorage.removeItem(this.filmesKey);

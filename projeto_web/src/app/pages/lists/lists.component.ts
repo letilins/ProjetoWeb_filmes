@@ -1,7 +1,8 @@
+import { Filme } from './../../models/filme.model';
 import { Component, OnInit, Sanitizer } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MovieService } from 'src/app/service/movie.service';
-import { Filme } from '../../models/filme.model';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-lists',
@@ -12,9 +13,10 @@ export class ListsComponent implements OnInit {
   filmes: Filme[] = [];
 
   urlVideo: SafeUrl | any;
-  videoId = 'ID_VIDEO';
+ 
 
   dados: any;
+  Filme: any;
 
   constructor(
     private MovieService: MovieService,
@@ -39,4 +41,19 @@ export class ListsComponent implements OnInit {
     //   console.log(this.dados);
     // });
   }
+  AdicionarIDfilmes(nome: string){
+    const NovoIDfilme = {
+      id: uuidv4(),
+      nome: nome
+    };
+
+    this.Filme.push(this.AdicionarIDfilmes);
+  }
+
+
+  ExcluirFilme(filmekey: String){
+    this.Filme = this.Filme.filter((Filme: { id: String; }) => Filme.id !== filmekey);
+  }
+
+
 }
