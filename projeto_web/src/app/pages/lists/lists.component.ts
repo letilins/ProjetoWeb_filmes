@@ -24,6 +24,8 @@ export class ListsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    
+
     this.urlVideo =
       'https://www.youtube.com/embed/YKfeEKJBbU0?si=n_nc4RjTZEwhRJG1';
     this.urlVideo = this.sanitizer.bypassSecurityTrustResourceUrl(
@@ -50,9 +52,17 @@ export class ListsComponent implements OnInit {
     this.Filme.push(NovoIDfilme);
   }
 
+  get filme(): Filme[] {
+    return this.MovieService.filmes;
+  }
 
-  ExcluirFilme(filmekey: String){
-    this.Filme = this.Filme.filter((filme: { id: string; }) => filme.id !== filmekey);
+
+  ExcluirFilme(filmeId: string): void {
+    //this.Filme = this.Filme.filter((filme: { id: string; }) => filme.id !== filmekey);
+    console.log("Excluir filme com ID:", filmeId);
+    this.MovieService.deletarFilme(filmeId);
+
+  
   }
 
 

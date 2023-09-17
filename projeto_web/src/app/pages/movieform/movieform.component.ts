@@ -24,7 +24,10 @@ export class MovieformComponent {
   constructor(private MovieService: MovieService) {}
 
   cadastrarFilme() {
+    this.novoFilme.id = uuidv4();
+
     this.MovieService.adicionarFilme(this.novoFilme);
+    
     this.novoFilme = {
       id:'',
       nome: '',

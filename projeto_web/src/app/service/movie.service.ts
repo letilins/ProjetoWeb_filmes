@@ -1,8 +1,9 @@
 import { Filme } from './../models/filme.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +11,26 @@ import { v4 as uuidv4 } from 'uuid';
 export class MovieService {
   private apiUrl = 'URL_DA_API';
   private filmesKey = 'meus_filmes';
-  filmes: Filme[] = [];
+  private filmesSubject = new BehaviorSubject<Filme[]>([]);
+  filmes: Filme[] = this.obterFilmes();;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.carregarFilmes();
+  }
+  
+  private carregarFilmes() {
+    const filmesString = localStorage.getItem(this.filmesKey);
+    const filmes = filmesString ? JSON.parse(filmesString) : [];
+    this.filmesSubject.next(filmes);
+  }
 
   adicionarFilme(filme: Filme) {
     const filmes = this.obterFilmes();
     filmes.push(filme);
-    // a chave da lista deve ser o ID do filme
     localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
+    this.filmesSubject.next(filmes); 
   }
+
 
   obterFilmes(): Filme[] {
     const filmesString = localStorage.getItem(this.filmesKey);
@@ -32,16 +43,14 @@ export class MovieService {
 
 
 
-  deletarFilme(filme: Filme) {
-    const filmes = JSON.parse(localStorage.getItem(this.filmesKey) || '[]');
-    //localStorage.clear(); limpa toda a lista :(
-      const index = filmes.findIndex((f: { id: any; }) => f.id === filmes.id);
-
-      if (index !== -1) {
-
-        filmes.splice(index, 1);
-
-        localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
-      }
+  deletarFilme(filmeId: string) {
+    const filmes = this.obterFilmes();
+    const index = filmes.findIndex((filme) => filme.id === filmeId);
+  
+    if (index !== -1) {
+      filmes.splice(index, 1);
+      localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
+      this.filmesSubject.next(filmes);
+    }
   }
 }
