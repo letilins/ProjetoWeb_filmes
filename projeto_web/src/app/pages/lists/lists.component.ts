@@ -61,7 +61,7 @@ export class ListsComponent implements OnInit {
     console.log('Excluir filme com ID:', filmeId);
     this.MovieService.deletarFilme(filmeId);
 
-    this.showAlert = true;
+    this.showAlert = true; // avisar a mensagem para excluir.
 
     setTimeout(() => {
       this.showAlert = false;
