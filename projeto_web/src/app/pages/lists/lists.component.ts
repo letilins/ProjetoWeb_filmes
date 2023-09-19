@@ -13,7 +13,7 @@ export class ListsComponent implements OnInit {
   filmes: Filme[] = [];
 
   urlVideo: SafeUrl | any;
- 
+
   id: any;
   dados: any;
   Filme: any;
@@ -23,9 +23,9 @@ export class ListsComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
-  ngOnInit() {
-    
+  showAlert: boolean = false;
 
+  ngOnInit() {
     this.urlVideo =
       'https://www.youtube.com/embed/YKfeEKJBbU0?si=n_nc4RjTZEwhRJG1';
     this.urlVideo = this.sanitizer.bypassSecurityTrustResourceUrl(
@@ -43,10 +43,10 @@ export class ListsComponent implements OnInit {
     //   console.log(this.dados);
     // });
   }
-  AdicionarIDfilmes(nome: string){
+  AdicionarIDfilmes(nome: string) {
     const NovoIDfilme = {
       id: uuidv4(),
-      nome: nome
+      nome: nome,
     };
 
     this.Filme.push(NovoIDfilme);
@@ -56,14 +56,15 @@ export class ListsComponent implements OnInit {
     return this.MovieService.filmes;
   }
 
-
   ExcluirFilme(filmeId: string): void {
     //this.Filme = this.Filme.filter((filme: { id: string; }) => filme.id !== filmekey);
-    console.log("Excluir filme com ID:", filmeId);
+    console.log('Excluir filme com ID:', filmeId);
     this.MovieService.deletarFilme(filmeId);
 
-  
+    this.showAlert = true;
+
+    setTimeout(() => {
+      this.showAlert = false;
+    }, 3000);
   }
-
-
 }

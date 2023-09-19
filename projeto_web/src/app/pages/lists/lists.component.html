@@ -14,9 +14,13 @@
 
           <br><br>
           <p>Deseja excluir o filme "{{ filme.nome }}" </p>
-          <button (click)="ExcluirFilme(filme.id)"> Excluir </button>
-
-        
+          <button (click)="ExcluirFilme(filme.id)"> Excluir </button> 
+        </div>
+        <br>
+        <br>
+        <div class="alert" *ngIf="showAlert">
+          Formulário excluido com sucesso!
+          Atualiza a página.
         </div>
 
         <div class="imagem_video">
