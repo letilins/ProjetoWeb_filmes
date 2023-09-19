@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -12,12 +11,12 @@ export class MovieService {
   private apiUrl = 'URL_DA_API';
   private filmesKey = 'meus_filmes';
   private filmesSubject = new BehaviorSubject<Filme[]>([]);
-  filmes: Filme[] = this.obterFilmes();;
+  filmes: Filme[] = this.obterFilmes();
 
   constructor(private http: HttpClient) {
     this.carregarFilmes();
   }
-  
+
   private carregarFilmes() {
     const filmesString = localStorage.getItem(this.filmesKey);
     const filmes = filmesString ? JSON.parse(filmesString) : [];
@@ -28,9 +27,12 @@ export class MovieService {
     const filmes = this.obterFilmes();
     filmes.push(filme);
     localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
-    this.filmesSubject.next(filmes); 
+    this.filmesSubject.next(filmes);
   }
 
+  getFilmes(): Filme[] {
+    return JSON.parse(localStorage.getItem('filmes') || '[]');
+  }
 
   obterFilmes(): Filme[] {
     const filmesString = localStorage.getItem(this.filmesKey);
@@ -41,12 +43,13 @@ export class MovieService {
     return this.http.get<any>(this.apiUrl);
   }
 
-
-
   deletarFilme(filmeId: string) {
     const filmes = this.obterFilmes();
     const index = filmes.findIndex((filme) => filme.id === filmeId);
-  
+
+    console.log(index);
+    console.log(filmeId);
+
     if (index !== -1) {
       filmes.splice(index, 1);
       localStorage.setItem(this.filmesKey, JSON.stringify(filmes));
