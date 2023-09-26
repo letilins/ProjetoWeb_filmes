@@ -3,6 +3,7 @@ import { Component, OnInit, Sanitizer } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MovieService } from 'src/app/service/movie.service';
 import { v4 as uuidv4 } from 'uuid';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lists',
@@ -20,7 +21,9 @@ export class ListsComponent implements OnInit {
 
   constructor(
     private MovieService: MovieService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   showAlert: boolean = false;
@@ -62,6 +65,7 @@ export class ListsComponent implements OnInit {
     this.MovieService.deletarFilme(filmeId);
 
     this.showAlert = true; // avisar a mensagem para excluir.
+    this.router.navigate(['.'], { relativeTo: this.activatedRoute });
 
     setTimeout(() => {
       this.showAlert = false;

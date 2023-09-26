@@ -6,11 +6,11 @@ import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-movieform',
   templateUrl: './movieform.component.html',
-  styleUrls: ['./movieform.component.css']
+  styleUrls: ['./movieform.component.css'],
 })
 export class MovieformComponent {
   novoFilme: Filme = {
-    id:'',
+    id: '',
     nome: '',
     diretor: '',
     ano: 0,
@@ -18,8 +18,8 @@ export class MovieformComponent {
     atores: [],
     imagem: '',
     video: '',
-  }
-  showAlert: boolean = false; 
+  };
+  showAlert: boolean = false;
 
   constructor(private MovieService: MovieService) {}
 
@@ -27,9 +27,9 @@ export class MovieformComponent {
     this.novoFilme.id = uuidv4();
 
     this.MovieService.adicionarFilme(this.novoFilme);
-    
+
     this.novoFilme = {
-      id:'',
+      id: '',
       nome: '',
       diretor: '',
       ano: 0,
@@ -44,7 +44,4 @@ export class MovieformComponent {
       this.showAlert = false;
     }, 3000);
   }
-
-  
-  
 }
