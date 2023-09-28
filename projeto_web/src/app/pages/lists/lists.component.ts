@@ -67,6 +67,14 @@ export class ListsComponent implements OnInit {
     this.showAlert = true; // avisar a mensagem para excluir.
     this.router.navigate(['.'], { relativeTo: this.activatedRoute });
 
+    //window.location.reload(); // atualizar a pagina sozinha
+
+    location.reload();
+    //
+    //window - contem tudo que você pode administrar junto ao navegador
+
+    // window é um objeto publico do javascript, ele é reconhecido automaticamente.
+
     setTimeout(() => {
       this.showAlert = false;
     }, 3000);

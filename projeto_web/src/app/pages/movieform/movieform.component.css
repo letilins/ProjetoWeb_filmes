@@ -81,4 +81,9 @@ form {
     right: 0;
     z-index: 9999;
   }
+
+  b {
+    color: red;
+    font-size: 13px;
+  }
       
